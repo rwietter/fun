@@ -16,8 +16,8 @@ matchInternetProtocol(groupIp, '124.111')
 matchInternetProtocol(groupIp, "124.1131");
 matchInternetProtocol(groupIp, "14.111");
 
-// output
-
-true: 124.111 === 124.111
-false: 124.111 !== 124.1131
-false: 124.111 !== 14.111  
+let output = {
+  true: '124.111 === 124.111',
+  false: '124.111 !== 124.1131',
+  falsy: '124.111 !== 14.111'
+}
