@@ -11,6 +11,9 @@
 - [Big-O Cheat Sheet - Know Thy Complexities!](https://www.bigocheatsheet.com/)
 - [Algorithms & Data Structures](https://cooervo.github.io/Algorithms-DataStructures-BigONotation/index.html)
 
+<br />
+<br />
+
 ## Sorting
 - [Algorithms & Data Structures](https://cooervo.github.io/Algorithms-DataStructures-BigONotation/algorithms.html)
 - [Algorithm Visualizer](https://algorithm-visualizer.org/branch-and-bound/binary-search)
@@ -30,23 +33,28 @@
 - [HeapSort - wisc](http://pages.cs.wisc.edu/~mcw/cs367/lectures/heaps.html)
 - [General Sorting - wisc](http://pages.cs.wisc.edu/~mcw/cs367/lectures/sorting.html)
 
+<br />
+<br />
+
 ## Free algorithms books 
 - [Data Structures and Algorithms](https://cathyatseneca.gitbooks.io/data-structures-and-algorithms/content/)
 - [Data Structures and Algorithm Analysis](http://people.cs.vt.edu/~shaffer/Book/JAVA3e20130328.pdf)
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/20sorting/)
 
+<br />
+<br />
 
 ## Articles & Study
 
-- Longest Common Subsequence
+- <strong> Longest Common Subsequence </strong>
   - [Longest Common Subsequence - Git Diff](https://gabrielschade.github.io/2019/01/07/algoritmo-LCS.html)
 
-- Big-O
+- <strong> Big-O </strong>
   - [8 time complexities that every programmer should know](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/)
 
-- Huffman Algorithm
+- <strong> Huffman Algorithm </strong>
   - [Huffman Coding](https://www.programiz.com/dsa/huffman-coding)
   - [Data Compression with Huffman’s Algorithm](https://freecontent.manning.com/data-compression-with-huffmans-algorithm/)
 
-- Dijkstra's Algorithm
+- <strong> Dijkstra's Algorithm </strong>
   - [Dijkstra's Algorithm](https://www.programiz.com/dsa/dijkstra-algorithm)
