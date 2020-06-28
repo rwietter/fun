@@ -36,6 +36,17 @@
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/20sorting/)
 
 
-## Articles
-- [Longest Common Subsequence - Git Diff](https://gabrielschade.github.io/2019/01/07/algoritmo-LCS.html)
-- [8 time complexities that every programmer should know](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/)
+## Articles & Study
+
+- Longest Common Subsequence
+  - [Longest Common Subsequence - Git Diff](https://gabrielschade.github.io/2019/01/07/algoritmo-LCS.html)
+
+- Big-O
+  - [8 time complexities that every programmer should know](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/)
+
+- Huffman Algorithm
+  - [Huffman Coding](https://www.programiz.com/dsa/huffman-coding)
+  - [Data Compression with Huffman’s Algorithm](https://freecontent.manning.com/data-compression-with-huffmans-algorithm/)
+
+- Dijkstra's Algorithm
+  - [Dijkstra's Algorithm](https://www.programiz.com/dsa/dijkstra-algorithm)
