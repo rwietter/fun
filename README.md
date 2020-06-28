@@ -1,4 +1,10 @@
-# algorithms
+<span align="center">
+  <h1>Algorithms and Data Structures</h1>
+</span>
+
+<br />
+<br />
+<br />
 
 ## Big O
 - [Big-O Cheat Sheet](https://bigocheatsheet.io/?dark-mode=true)
