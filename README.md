@@ -28,7 +28,7 @@
 - [HeapSort - wisc](http://pages.cs.wisc.edu/~mcw/cs367/lectures/heaps.html)
 - [General Sorting - wisc](http://pages.cs.wisc.edu/~mcw/cs367/lectures/sorting.html)
 
-#### Free algorithms books 
+## Free algorithms books 
 - [Data Structures and Algorithms](https://cathyatseneca.gitbooks.io/data-structures-and-algorithms/content/)
 - [Data Structures and Algorithm Analysis](http://people.cs.vt.edu/~shaffer/Book/JAVA3e20130328.pdf)
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/20sorting/)
