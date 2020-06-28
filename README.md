@@ -9,8 +9,10 @@
 ## Big O
 - [Big-O Cheat Sheet](https://bigocheatsheet.io/?dark-mode=true)
 - [Big-O Cheat Sheet - Know Thy Complexities!](https://www.bigocheatsheet.com/)
+- [Algorithms & Data Structures](https://cooervo.github.io/Algorithms-DataStructures-BigONotation/index.html)
 
 ## Sorting
+- [Algorithms & Data Structures](https://cooervo.github.io/Algorithms-DataStructures-BigONotation/algorithms.html)
 - [Algorithm Visualizer](https://algorithm-visualizer.org/branch-and-bound/binary-search)
 - [Sorting Animations](http://sorting.at/#)
 - [Toptal sorting animations](https://www.toptal.com/developers/sorting-algorithms)
@@ -32,3 +34,8 @@
 - [Data Structures and Algorithms](https://cathyatseneca.gitbooks.io/data-structures-and-algorithms/content/)
 - [Data Structures and Algorithm Analysis](http://people.cs.vt.edu/~shaffer/Book/JAVA3e20130328.pdf)
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/20sorting/)
+
+
+## Articles
+- [Longest Common Subsequence - Git Diff](https://gabrielschade.github.io/2019/01/07/algoritmo-LCS.html)
+- [8 time complexities that every programmer should know](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/)
