@@ -1,4 +1,4 @@
-const arr = [5, 6, 7, 2, 1, 4, 9, 7, 3, 2].sort();
+const arr = [5, 6, 7, 2, 1, 4, 9, 7, 3, 2].sort((a, b) => a - b);
 
 function binarySearch(arr, item) {
   let first = 0;

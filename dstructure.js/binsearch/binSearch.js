@@ -20,7 +20,6 @@ function insertSort(arr, size) {
     i++;
   }
   console.log(binSearch(arr, 0, size, 14));
-  console.log(arr);
 }
 
 function selectSort(arr, size) {
