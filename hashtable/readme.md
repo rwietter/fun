@@ -2,6 +2,87 @@
 
 ---
 
+Hash functions são baseadas na tabela ASCII para calcular o índice, usando uma função de hash para calcula o índice podemos acessar em O(1) no melhor caso tanto para inserção, remoção e pesquisa. Nos pior caso será O(n) para todas essas TADs, por isso, funções de hashing são a parte mais importante dessa estrutura, exemplo:
+
+```javascript
+const fruits = {
+	apples: 2.40,
+	avocados: 7.90,
+	banana: 3.54
+}
+
+const getForHash = fruits['avocados'];
+console.log(getForHash);
+```
+
+Para transformar em um índice usando a tabela hash, usa-se um cálculo para gerar um índice a partir da string:
+
+```java
+class Main {
+  public static void main(String[] args){
+
+    Integer number = new Integer(2020); // 2020
+    String str = new String("2020");
+    System.out.println(number.hashCode()); // 2020
+    System.out.println(str.hashCode()); // 1537276
+
+    System.out.println("ABC".hashCode()); // 64578
+    System.out.println("BAC".hashCode()); // 65508
+    System.out.println("CAB".hashCode()); // 66468
+
+    // A = 65
+    // B = 66
+    // C = 67
+  }
+}
+```
+
+O HashCode pode ser obtido por algumas fórmulas, no Java pode ser escrito como:
+
+```java
+s.charAt(0) * 31^n-1 + s.charAt(1) * 31^n-2 + ... + s.charAt(n-1)
+```
+
+Onde `s` é uma string e `n` é seu comprimento. Um exemplo:
+
+```java
+"ABC" = 'A' * 31^2 + 'B' * 31 + 'C' = 65 * 31^2 + 66 * 31 + 67 = 64578
+```
+
+---
+
+#### Colisões
+
+- Colisões acontecem quando o hash obtém o mesmo índice para chaves diferentes:
+
+```java
+"Aa" = 'A' * 31 + 'a' = 2112
+"BB" = 'B' * 31 + 'B' = 2112
+```
+
+- No exemplo abaixo o resultado após o hash é `[as, looks, is, it, easy, Nothing]`, ou seja, houve uma colisão com o `as`, assim só trouxe uma delas. A ordem em que os elementos são retornados depende de seus códigos hash.
+
+```java
+public void hashset() {
+  String[] words = new String("Nothing is as easy as it looks").split(" ");
+
+  HashSet<String> hs = new HashSet<String>();
+
+  for (String x : words) hs.add(x);
+
+  System.out.println(hs.size() + " distinct words detected.");
+  System.out.println(hs);
+}
+```
+
+- Algumas formas de mitigar colisões é inserir os dados em uma linked list a partir da hash table, essa técnica é chamada de `Separate Chaining Collision Resolution`
+
+<img width="50%" src="./assets/a97f64cc-297c-4998-8fe7-99f7c5a93417.png">
+
+- Outro forma seria o `linear probing`, onde verifica-se o o índice já está ocupado, por exemplo, caso não pudermos inserir em `k`, então tentaremos em `k+1 k+2 k+n`.
+
+---
+
 #### Load Factor
 
 ```
@@ -61,4 +142,21 @@ __________________________________
 | 2 | 4 | 6 | 4 |  | 10 | 12 | 1 |
 ----------------------------------
 Loader Factor = 7/8
+```
+
+---
+
+### HashMap
+
+- As HashMaps são uma forma de criar pares de chave : valor utilizando hash functions
+
+```javascript
+const fruits = {
+	apples: 2.40,
+	avocados: 7.90,
+	banana: 3.54
+}
+
+const getForHash = fruits['avocados'];
+console.log(getForHash);
 ```
