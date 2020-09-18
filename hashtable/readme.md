@@ -14,7 +14,7 @@ __________________
 > 1 and * is occupied <
 ```
 
-- Caso exista mais itens na hash table que o número de slots, então terá colisões, o Load Factor deve ser 1.
+- Caso exista mais itens na hash table que o número de slots, então possivelmente haverá colisões, o Load Factor deve ser 1.
 
 ```
 ________________
