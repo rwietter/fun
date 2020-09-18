@@ -1,4 +1,6 @@
-### Hash Table
+<div align="center">Hash Table</div>
+
+---
 
 #### Load Factor
 
