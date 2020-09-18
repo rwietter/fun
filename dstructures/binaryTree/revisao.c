@@ -59,16 +59,6 @@ int busca (ArvGen* a, char c)
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
 // 2------------------------------------------------------------------------
 // ###################### ÁRVORE DE BALANCEAMENTO ################################
 #include <stdlib.h>
@@ -111,17 +101,6 @@ int verifica_AVL(No* t)
 		return alturaAVL(altura(t->dir) - altura(t->esq));
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // 3--------------------------------------------------------------------------------
 // ###################### ÁRVORE BINÁRIA DE BUSCA ################################
@@ -167,17 +146,6 @@ Arv* cria_abp(char c)
 	}
 	return node;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 //  4 - O algoritmo de busca DFS
 #include <stdio.h>
@@ -282,11 +250,6 @@ void dfsR( Graph G, vertex v)
 }
 
 
-
-
-
-
-
 // 5 ------------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
@@ -367,6 +330,6 @@ void GRAPHremoveArc( Graph G, vertex v, vertex w)
 
 
 // Pesquisa de largura pela primeira vez (BFS)
-	// Problema: encontre o comprimento do caminho mais curto de s para cada nó;
+// Problema: encontre o comprimento do caminho mais curto de s para cada nó;
 
 // Pesquisa por profundidade (DFS)
