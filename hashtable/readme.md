@@ -1,8 +1,9 @@
-<div align="center">Hash Table</div>
+<div align="center"><h1>Hash Table</h1></div>
 
----
+<br />
+<br />
 
-Hash functions são baseadas na tabela ASCII para calcular o índice, usando uma função de hash para calcula o índice podemos acessar em O(1) no melhor caso tanto para inserção, remoção e pesquisa. Nos pior caso será O(n) para todas essas TADs, por isso, funções de hashing são a parte mais importante dessa estrutura, exemplo:
+Hash functions são baseadas na tabela ASCII para calcular o índice, usando uma função de hash para calcular o índice podemos acessar em O(1) no melhor caso tanto para inserção, remoção e pesquisa. No pior caso será O(n) para todas essas TADs, por isso, funções de hashing são a parte mais importante dessa estrutura, exemplo:
 
 ```javascript
 const fruits = {
@@ -15,7 +16,7 @@ const getForHash = fruits['avocados'];
 console.log(getForHash);
 ```
 
-Para transformar em um índice usando a tabela hash, usa-se um cálculo para gerar um índice a partir da string:
+Faz-se um cálculo para gerar um índice a partir da string e da tabela ASCII para cada letra, somando isso e retornando o índice para a string:
 
 ```java
 class Main {
@@ -49,7 +50,11 @@ Onde `s` é uma string e `n` é seu comprimento. Um exemplo:
 "ABC" = 'A' * 31^2 + 'B' * 31 + 'C' = 65 * 31^2 + 66 * 31 + 67 = 64578
 ```
 
+<br />
+
 ---
+
+<br />
 
 #### Colisões
 
@@ -75,13 +80,17 @@ public void hashset() {
 }
 ```
 
-- Algumas formas de mitigar colisões é inserir os dados em uma linked list a partir da hash table, essa técnica é chamada de `Separate Chaining Collision Resolution`
+- Uma das formas de mitigar colisões é inserir os dados em uma linked list a partir de um slot da hash table, essa técnica é chamada de `Separate Chaining Collision Resolution`
 
 <img width="50%" src="./assets/a97f64cc-297c-4998-8fe7-99f7c5a93417.png">
 
-- Outro forma seria o `linear probing`, onde verifica-se o o índice já está ocupado, por exemplo, caso não pudermos inserir em `k`, então tentaremos em `k+1 k+2 k+n`.
+- Outra forma seria o `Linear Probing`, onde verifica-se caso o índice já está ocupado, por exemplo, caso não pudermos inserir em `k`, então tentaremos em `k+1 k+2 k+n`.
+
+<br />
 
 ---
+
+<br />
 
 #### Load Factor
 
@@ -144,7 +153,11 @@ __________________________________
 Loader Factor = 7/8
 ```
 
+<br />
+
 ---
+
+<br />
 
 ### HashMap
 
