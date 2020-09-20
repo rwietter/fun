@@ -1,61 +1,40 @@
-// let btn0 = document.getElementById(`btn0`);
-// let btn1 = document.getElementById(`btn1`);
-// let btnClr = document.getElementById(`btnClr`);
-// let btnEql = document.getElementById(`btnEql`);
-// let btnSum = document.getElementById(`btnSum`);
-// let btnSub = document.getElementById(`btnSub`);
-// let btnMul = document.getElementById(`btnMul`);
-// let btnDiv = document.getElementById(`btnDiv`);
-// let res = document.getElementById(`res`);
+const buttons = document.querySelectorAll('button');
+const response = document.querySelector('#res');
+const toBtnArray = Array.from(buttons);
 
-// let btnZero = [];
-// let btnOne = [];
+const hasMatch = (string) => (mask) => string.match(mask);
 
-// btn0.addEventListener('click', (e) => {
-//   btnZero.push(0);
-//   console.log(btnZero);
-//   e.stopPropagation();
-// });
+const regex = {
+  number: /\d+/g,
+  _alphanumeric: /(\W)/g,
+}
 
-// btn1.addEventListener('click', (e) => {
-//   btnOne.push(1);
-//   console.log(btnOne);
-//   e.stopPropagation();
-// });
+let $result = '';
 
-// function onButton(e) {
-//   var btn = e.target || e.srcElement;
-//   var action = document.getElementById(btn.id).innerHTML;
-//   var res = document.getElementById('res');
+const binaryCalc = () => {
+  const input = $result;
+  
+  const [left, right] = hasMatch(input)(regex['number']);
+  const [operator] = hasMatch(input)(regex['_alphanumeric']);
+  const formula = parseInt(left, 2) + operator + parseInt(right, 2);
 
-//   switch (action) {
-//     case '0':
-//     case '1':
-//     case '+':
-//     case '-':
-//     case '*':
-//     case '/':
-//       res.innerHTML += action;
-//       break;
-//     case 'C':
-//       res.innerHTML = '';
-//       break;
-//     case '=':
-//       var expr = res.innerHTML;
-//       var nums = /(\d+)/g;
-//       // Replace all base 2 nums with base 10 equivs
-//       expr = expr.replace(nums, function (match) {
-//         return parseInt(match, 2);
-//       });
-//       // eval in base 10 and convert to base 2
-//       res.innerHTML = eval(expr).toString(2);
-//       break;
-//     default:
-//       console.error('should not be executed');
-//       break;
-//   }
-// }
-// var buttons = document.getElementsByTagName('button');
-// for (let button of buttons) {
-//   button.onclick = onButton;
-// }
+  let data = eval(formula).toString(2);
+  return data;
+}
+
+const listenerBtns = (event) => {
+  const value = event.target.value.toLowerCase();
+  if (value === 'c') {
+    $result = '';
+  } else if (value === '=') {
+    const fromBinary = binaryCalc();
+    $result = fromBinary;
+  } else {
+    $result += value;
+  }
+  response.innerHTML = $result;
+}
+
+toBtnArray.map((elem, idx) => {
+  elem.addEventListener('click', listenerBtns);
+})
