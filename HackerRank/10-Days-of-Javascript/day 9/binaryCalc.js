@@ -1,7 +1,10 @@
 const buttons = document.querySelectorAll('button');
 const response = document.querySelector('#res');
-const toBtnArray = Array.from(buttons);
+const btnList = Array.from(buttons);
+let resulted = '';
 
+const SendOuput = (binary) => response.innerHTML = binary;
+const lowerCaseStr = (value) => value.toLowerCase();
 const hasMatch = (string) => (mask) => string.match(mask);
 
 const regex = {
@@ -9,10 +12,8 @@ const regex = {
   _alphanumeric: /(\W)/g,
 }
 
-let $result = '';
-
-const binaryCalc = () => {
-  const input = $result;
+const binaryCalc = (result) => {
+  const input = result;
   
   const [left, right] = hasMatch(input)(regex['number']);
   const [operator] = hasMatch(input)(regex['_alphanumeric']);
@@ -22,19 +23,19 @@ const binaryCalc = () => {
   return data;
 }
 
-const listenerBtns = (event) => {
-  const value = event.target.value.toLowerCase();
-  if (value === 'c') {
-    $result = '';
-  } else if (value === '=') {
+const isEqual = (input) => (op) => input === op;
+
+const listeningOnClick = ({ target: { value } }) => {
+  const input = lowerCaseStr(value);
+  if (isEqual(input)('c')) {
+    resulted = '';
+  } else if (input === '=') {
     const fromBinary = binaryCalc();
-    $result = fromBinary;
+    resulted = fromBinary;
   } else {
-    $result += value;
+    resulted += input;
   }
-  response.innerHTML = $result;
+  return SendOuput(resulted);
 }
 
-toBtnArray.map((elem, idx) => {
-  elem.addEventListener('click', listenerBtns);
-})
+btnList.map((element) => element.addEventListener('click', listeningOnClick));
