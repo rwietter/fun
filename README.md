@@ -27,7 +27,7 @@
 - [Codesdope - bubleSort](https://www.codesdope.com/course/algorithms-bubble-sort/)
 - [Codesdope - heapsort](https://www.codesdope.com/course/algorithms-heapsort/)
 - [Codesdope - mergeSort](https://www.codesdope.com/course/algorithms-merge-sort/)
-- [Codesdope - quickSort](https://www.codesdope.com/course/algorithms-quicksort/)
+- [](https://www.codesdope.com/course/algorithms-quicksort/)
 - [Big-O - wisc](http://pages.cs.wisc.edu/~mcw/cs367/lectures/bigO.html)
 - [HashTable - wisc](http://pages.cs.wisc.edu/~mcw/cs367/lectures/hashtables.html)
 - [HeapSort - wisc](http://pages.cs.wisc.edu/~mcw/cs367/lectures/heaps.html)
@@ -36,10 +36,27 @@
 <br />
 <br />
 
+## Algoritmos com animações
+- [VisuAlgo](https://visualgo.net/en/dfsbfs)
+- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [Graph Traversal Algorithms](https://workshape.github.io/visual-graph-algorithms/)
+- [Breadth and Depth-first search](http://pages.cs.wisc.edu/~mcw/cs367/lectures/graph_traversals.html)
+- [BFS, DFS and Graphs](https://www.codesdope.com/course/algorithms-graphs/)
+
+<br />
+<br />
+
+### Grafos
+- [CS Academy](https://csacademy.com/app/graph_editor/)
+- [CS Tree Visual](https://cstree-visual.netlify.com/)
+
+<br />
+<br />
+
 ## Free algorithms books 
 - [Data Structures and Algorithms](https://cathyatseneca.gitbooks.io/data-structures-and-algorithms/content/)
-- [Data Structures and Algorithm Analysis](http://people.cs.vt.edu/~shaffer/Book/JAVA3e20130328.pdf)
 - [Algorithms, 4th Edition](https://algs4.cs.princeton.edu/20sorting/)
+- [Estruturas de dados](http://www.ic.uff.br/~cbraga/ed/apostila/)
 
 <br />
 <br />
@@ -58,3 +75,19 @@
 
 - <strong> Dijkstra's Algorithm </strong>
   - [Dijkstra's Algorithm](https://www.programiz.com/dsa/dijkstra-algorithm)
+
+
+## Courses
+
+- [Programação Dinãmica](https://www.youtube.com/watch?v=KVlGx-9CuO4&list=PL5TJqBvpXQv7KCYOIXzPnGac4t_R8MQSG)
+
+## Slide exemple
+- [Hashing](http://www.inf.ufpr.br/eduardo/ensino/ci218/Aula_Indexa__o_e_Hashing.pdf)
+
+---
+
+## 📝 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/rwietter/Federal-University-of-Santa-Maria/blob/master/LICENSE) para mais detalhes.
+
+## By @rwietter 👋

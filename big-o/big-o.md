@@ -1,0 +1,5 @@
+# Big-O (Assintotic Analysis)
+
+Digamos que eu tenho um código que realiza uma tarefa e obtém um resultado, mas obtenho o resultado em 0.25 segundos. Meu colega tem o código dele e obtém o mesmo resultado com 0.5 segundos. Isso significa que o código do meu colega é melhor que o meu ? Não necessariamente, porque o código do meu colega pode ser executado em um computador mais rápido. Então, como podemos comparar o desempenho de diferentes algoritmos? A resposta é a análise assintótica. Com a notação assintótica, podemos inferir um valor aproximado para qualquer algoritmo, independentemente do hardware ou software, de forma que possamos comparar o desempenho de diferentes algoritmos de forma abstrata.
+
+Big-O é uma forma de descrever o desempenho de um algoritmo. É uma maneira de descrever o pior cenário possível de um algoritmo
