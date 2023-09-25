@@ -33,6 +33,16 @@ defmodule CrudWeb.Router do
     get("/:name", HelloController, :name)
   end
 
+  # GET     /user      CrudWeb.UserController :index
+  # GET     /user/new  CrudWeb.UserController :new
+  # PATCH   /user/:id  CrudWeb.UserController :update
+  # PUT     /user/:id  CrudWeb.UserController :update
+  # DELETE  /user/:id  CrudWeb.UserController :delete
+  scope "/user", CrudWeb do
+    pipe_through(:browser)
+    resources("/", UserController, only: [:new, :index, :update, :delete])
+  end
+
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:crud, :dev_routes) do
     # If you want to use the LiveDashboard in production, you should put
