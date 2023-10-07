@@ -7,9 +7,10 @@ COMMENT
 read -p "W: " W
 
 if [[ $W =~ ^[nN]$ ]]; then
-    echo "NO"
+  echo "NO"
 fi
 
 if [[ $W =~ ^[yY]$ ]]; then
-    echo "YES"
+  echo "YES"
 fi
+FFF
