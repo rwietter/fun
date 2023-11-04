@@ -1,8 +1,0 @@
-Para análise amortizada, a principal preocupação não é apenas o tamanho da entrada, mas também a sequência de operações executadas em uma estrutura de dados ou algoritmo. A análise amortizada visa fornecer uma visão média ou suavizada do custo das operações ao longo desta sequência. Considera como o custo de operações individuais pode variar e como essa variação é distribuída pela sequência de operações.
-
-Na análise amortizada, você está interessado em compreender o custo cumulativo de uma série de operações e garantir que o custo médio por operação permaneça limitado, mesmo que algumas operações sejam mais caras que outras.
-
-Existem três métodos comumente usados ​​para realizar análises amortizadas:
-- **Análise Agregada**: Neste método, você analisa o custo total de uma sequência de operações e depois o divide pelo número de operações para encontrar o custo médio. Este método fornece uma visão global do desempenho do algoritmo.
-- **Método de contabilidade**: Neste método, você mantém uma conta ou sistema de “crédito” para controlar quanto tempo extra é gasto em algumas operações e usa esse crédito para compensar posteriormente o custo de operações caras. O objetivo é garantir que o total de créditos nunca seja negativo, o que garante um limite superior ao custo médio por operação.
-- **Método Potencial**: Este método atribui um potencial à estrutura de dados em cada etapa, representando o trabalho “extra” realizado pelo algoritmo. O custo amortizado de uma operação é então o custo real mais a mudança no potencial. Ao escolher cuidadosamente a função potencial, você pode analisar o custo médio das operações.

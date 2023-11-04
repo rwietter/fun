@@ -18,6 +18,8 @@ function initials(str, count) {
     
     success 
         ? console.log('✅ SUCCESS!', signature)
-        : console.error('🚫 FAILED!', signature, `Returned: "${result}", expected: ${args[2]}`);
+        : console.error(
+        '🚫 FAILED!', signature, `Returned: "${result}", expected: ${args[2]}`
+        );
 });
 ```
