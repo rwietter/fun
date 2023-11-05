@@ -1,4 +1,6 @@
 - [Steve's Awk Academy](https://www.troubleshooters.com/codecorn/awk/index.htm)
+- [Awk by Example, Part 1](https://www.funtoo.org/Awk_by_Example,_Part_1)
+- [Awk by Example, Part 2](https://www.funtoo.org/Awk_by_Example,_Part_2)
 - [Awk one-liners](https://www.pement.org/awk/awk1line.txt)
 - [30 Examples for Awk Command in Text Processing](https://likegeeks.com/awk-command/)
 - [Awk regular expressions](https://www.johndcook.com/blog/awk-regular-expressions/)
