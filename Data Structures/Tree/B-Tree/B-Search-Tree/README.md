@@ -24,19 +24,19 @@ A inserção deve seguir o padrão de ordenação, onde os valores menores que o
 
 ```js
 procedimento insert(valor)
-    se valor menor que valor da raiz então
-        se o nó da esquerda não for nulo então
-            nó.da.esquerda.insere(valor)
-        senão
-            nó da esquerda := cria BinarySearchTree(valor)
-        fim se
-    senão
-        se nó da direita não for nulo então
-            nó.da.direita.insere(valor)
-        senão
-            nó.da.direita := cria BinarySearchTree(valor)
-        fim se
-    fim se
+		se valor menor que valor da raiz então
+				se o nó da esquerda não for nulo então
+						nó.da.esquerda.insere(valor)
+				senão
+						nó da esquerda := cria BinarySearchTree(valor)
+				fim se
+		senão
+				se nó da direita não for nulo então
+						nó.da.direita.insere(valor)
+				senão
+						nó.da.direita := cria BinarySearchTree(valor)
+				fim se
+		fim se
 fim procedimento
 ```
 
@@ -68,7 +68,7 @@ A busca consiste em criar duas ramificações, a primeira vai verificar se o val
 ```js
 find(value) { // O(log n)
 	if (value === this.value) return this;
-	
+
 	if (value < this.value) {
 		if (this.left) {
 			return this.left.find(value);
