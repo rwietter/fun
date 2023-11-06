@@ -9,9 +9,9 @@ Uma árvore binária é uma coleção de nós. Cada nó tem três atributos: **v
 ```js
 class BinaryTree {
   constructor(value) {
-		this.value = value;
-		this.left = null;
-		this.right = null;
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
 }
 ```
@@ -42,21 +42,21 @@ O DFS explora um caminho até uma folha antes de retroceder e explorar outro cam
 
 ```js
 preOrderDFS() {
-	console.log(this.value);
-	if (this.left) this.left.preOrder();
-	if (this.right) this.right.preOrder();
+  console.log(this.value);
+  if (this.left) this.left.preOrder();
+  if (this.right) this.right.preOrder();
 }
 
 inOrderDFS() {
-	if (this.left) this.left.inOrder();
-	console.log(this.value);
-	if (this.right) this.right.inOrder();
+  if (this.left) this.left.inOrder();
+  console.log(this.value);
+  if (this.right) this.right.inOrder();
 }
 
 postOrderDFS() {
-	if (this.left) this.left.postOrder();
-	if (this.right) this.right.postOrder();
-	console.log(this.value);
+  if (this.left) this.left.postOrder();
+  if (this.right) this.right.postOrder();
+  console.log(this.value);
 }
 ```
 
@@ -65,13 +65,13 @@ O algoritmo BFS percorre a árvore nível por nível e por profundidade.
 
 ```js
 bfs() {
-	const queue = [this];
-	while (queue.length) {
-		const node = queue.shift();
-		console.log(node.value);
-		if (node.left) queue.push(node.left);
-		if (node.right) queue.push(node.right);
-	}
+  const queue = [this];
+  while (queue.length) {
+    const node = queue.shift();
+    console.log(node.value);
+    if (node.left) queue.push(node.left);
+    if (node.right) queue.push(node.right);
+  }
 }
 ```
 
@@ -81,74 +81,74 @@ bfs() {
 
 ```js
 class BinaryTree {
-	constructor(value) {
-		this.value = value;
-		this.left = null;
-		this.right = null;
-	}
-	
-	insertLeft(value) {
-		if (this.left) {
-			const node = new BinaryTree(value);
-			 // left node do novo nó recebe o nó esquerdo do nó atual
-			node.left = this.left;
-			// nó esquerdo do nó atual recebe o novo nó
-			this.left = node;
-		} else {
-			this.left = new BinaryTree(value);
-		}
-	}
-	
-	insertRight(value) {
-		if (this.right) {
-			const node = new BinaryTree(value);
-			node.right = this.right;
-			this.right = node;
-		} else {
-			this.right = new BinaryTree(value);
-		}
-	}
-	
-	preOrderDFS() {
-		console.log(this.value);
-		if (this.left) this.left.preOrder();
-		if (this.right) this.right.preOrder();
-	}
-	
-	inOrderDFS() {
-		if (this.left) this.left.inOrder();
-		console.log(this.value);
-		if (this.right) this.right.inOrder();
-	}
-	
-	postOrderDFS() {
-		if (this.left) this.left.postOrder();
-		if (this.right) this.right.postOrder();
-		console.log(this.value);
-	}
-	
-	/**
-	* Breadth-first search: percorre a árvore em largura
-	*/
-	bfs() {
-		const queue = [this];
-		while (queue.length) {
-			const node = queue.shift();
-			console.log(node.value);
-			if (node.left) queue.push(node.left);
-			if (node.right) queue.push(node.right);
-		}
-	}
-	
-	showBinaryTree(node, level = 0) {
-		if (node) {
-				this.showBinaryTree(node.right, level + 1);
-				const space = " ".repeat(6 * level)
-				console.log(space + `—> ${node.value}`);
-				this.showBinaryTree(node.left, level + 1);
-			}
-		}
-	}
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  insertLeft(value) {
+    if (this.left) {
+      const node = new BinaryTree(value);
+       // left node do novo nó recebe o nó esquerdo do nó atual
+      node.left = this.left;
+      // nó esquerdo do nó atual recebe o novo nó
+      this.left = node;
+    } else {
+      this.left = new BinaryTree(value);
+    }
+  }
+
+  insertRight(value) {
+    if (this.right) {
+      const node = new BinaryTree(value);
+      node.right = this.right;
+      this.right = node;
+    } else {
+      this.right = new BinaryTree(value);
+    }
+  }
+
+  preOrderDFS() {
+    console.log(this.value);
+    if (this.left) this.left.preOrder();
+    if (this.right) this.right.preOrder();
+  }
+
+  inOrderDFS() {
+    if (this.left) this.left.inOrder();
+    console.log(this.value);
+    if (this.right) this.right.inOrder();
+  }
+
+  postOrderDFS() {
+    if (this.left) this.left.postOrder();
+    if (this.right) this.right.postOrder();
+    console.log(this.value);
+  }
+
+  /**
+  * Breadth-first search: percorre a árvore em largura
+  */
+  bfs() {
+    const queue = [this];
+    while (queue.length) {
+      const node = queue.shift();
+      console.log(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+  }
+
+  showBinaryTree(node, level = 0) {
+    if (node) {
+        this.showBinaryTree(node.right, level + 1);
+        const space = " ".repeat(6 * level)
+        console.log(space + `—> ${node.value}`);
+        this.showBinaryTree(node.left, level + 1);
+      }
+    }
+  }
 }
 
 

@@ -23,9 +23,8 @@ Uma solução que leva a um aproveitamento melhor do espaço utiliza uma “list
 
 ```c
 struct arvgen {
-	char info;
-	struct arvgen *prim;
-	struct arvgen *prox;
+  char info;
+  struct arvgen *prim;
+  struct arvgen *prox;
 };
 ```
-
