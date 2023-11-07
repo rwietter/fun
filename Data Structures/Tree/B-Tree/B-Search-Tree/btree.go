@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"os"
 	"strings"
 )
 
@@ -61,6 +60,24 @@ func (n *Node) print(node *Node, space *int) {
 	node.print(node.right, space)
 }
 
+func (n *Node) search(node *Node, target int) bool {
+	if isNodeEmpty(node) {
+		return false
+	}
+
+	if node.value == target {
+		return true
+	}
+
+	if target < node.value {
+		return node.search(node.left, target)
+	} else if target > node.value {
+		return node.search(node.right, target)
+	}
+
+	return false
+}
+
 func main() {
 	var tree *BTree = &BTree{}
 	tree.
@@ -74,7 +91,8 @@ func main() {
 		insert(8).
 		insert(13)
 
-	printTree(os.Stdout, tree.root, 0, 'T')
+	fmt.Println("Search:", tree.root.search(tree.root, 12))
+	// printTree(os.Stdout, tree.root, 0, 'T')
 	// displayTree(tree.root, 0, 0)
 }
 

@@ -1,5 +1,6 @@
 # Binary Search Tree (bst)
 
+>[!NOTE]
 > "Uma árvore de busca binária às vezes é chamada de árvore binária ordenada ou classificada, pois mantém seus valores em ordem de classificação, para que a pesquisa e outras operações possam usar o princípio da pesquisa binária" —  Wikipedia
 
 Uma propriedade importante de uma árvore de busca binária é que o **valor de um nó da árvore de busca binária** é **maior que o valor do filho de seu filho esquerdo**, mas **menor que o valor do filho de seu filho direito**. Exemplo:
@@ -22,41 +23,54 @@ Valores menores que o valor da raiz vão para a esquerda da árvore e os valores
 
 A inserção deve seguir o padrão de ordenação, onde os valores menores que o valor raiz vão para a esquerda e os valores maiores que a raiz vão para a direita. O filho da subárvore a esquerda é menor que a subárvore e o filho da subárvore a direita é maior que a subárvore.
 
-```js
-procedimento insert(valor)
-    se valor menor que valor da raiz então
-        se o nó da esquerda não for nulo então
-            nó.da.esquerda.insere(valor)
-        senão
-            nó da esquerda := cria BinarySearchTree(valor)
-        fim se
-    senão
-        se nó da direita não for nulo então
-            nó.da.direita.insere(valor)
-        senão
-            nó.da.direita := cria BinarySearchTree(valor)
-        fim se
-    fim se
-fim procedimento
+```md
+Função insert(t: BTree, valor: inteiro) -> BTree
+1) Verificar se a árvore está vazia:
+    a) Se estiver vazia:
+        i) Criar um novo nó com o valor fornecido.
+        ii) Este nó se torna a raiz da árvore.
+    b) Senão:
+        i) Chamar a função insertNode na raiz da árvore, passando o valor fornecido.
+2) Retornar a árvore modificada.
+
+Função insertNode(n: Node, valor: inteiro)
+1) Verificar se o valor é menor ou igual ao valor do nó atual (n):
+    a) Se sim:
+        i) Verificar se o filho esquerdo do nó atual é nulo:
+            - Se for nulo, criar um novo nó com o valor fornecido e atribuí-lo como filho esquerdo do nó atual.
+        ii) Senão:
+            - Chamar recursivamente a função insertNode com o filho esquerdo como o novo nó atual.
+    b) Senão:
+        i) Verificar se o filho direito do nó atual é nulo:
+            - Se for nulo, criar um novo nó com o valor fornecido e atribuí-lo como filho direito do nó atual.
+        ii) Senão:
+            - Chamar recursivamente a função insertNode com o filho direito como o novo nó atual.
 ```
 
 
 ```js
-insert(value) { // O(log n)
-  if (value <= this.value) {
-    if (this.left) {
-      this.left.insert(value);
-    } else {
-      this.left = new BinarySearchTree(value);
-    }
+func (t *BTree) insert(value int) *BTree {
+  if isTreeEmpty(t) {
+    t.root = &Node{value: value, left: nil, right: nil}
+  } else {
+    t.root.insertNode(value)
   }
+  return t
 }
-else {
-  if (this.right) {
-    this.right.insert(value)
-  }
-  else {
-    this.right = new BinarySearchTree(value);
+
+func (n *Node) insertNode(value int) {
+  if value <= n.value {
+    if n.left == nil {
+      n.left = &Node{value: value, left: nil, right: nil}
+    } else {
+      n.left.insertNode(value)
+    }
+  } else {
+    if n.right == nil {
+      n.right = &Node{value: value, left: nil, right: nil}
+    } else {
+      n.right.insertNode(value)
+    }
   }
 }
 ```
