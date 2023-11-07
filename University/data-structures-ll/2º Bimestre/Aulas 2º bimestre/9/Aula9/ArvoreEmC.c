@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-//Cada nó deve armazenar três informações: a informação propriamente dita, no caso um
-//caractere, e dois ponteiros para as sub-árvores, à esquerda e à direita. Então a estrutura
-//de C para representar o nó da árvore pode ser dada por:
+//Cada nï¿½ deve armazenar trï¿½s informaï¿½ï¿½es: a informaï¿½ï¿½o propriamente dita, no caso um
+//caractere, e dois ponteiros para as sub-ï¿½rvores, ï¿½ esquerda e ï¿½ direita. Entï¿½o a estrutura
+//de C para representar o nï¿½ da ï¿½rvore pode ser dada por:
 
 struct arv {
 	char info;
@@ -11,36 +11,36 @@ struct arv {
 	struct arv* dir;
 };
 
-//Da mesma forma que uma lista encadeada é representada por um ponteiro para o
-//primeiro nó, a estrutura da árvore como um todo é representada por um ponteiro para o
-//nó raiz.
-//Como acontece com qualquer TAD (tipo abstrato de dados), as operações que fazem
-//sentido para uma árvore binária dependem essencialmente da forma de utilização que se
-//pretende fazer da árvore. Nesta seção, em vez de discutirmos a interface do tipo abstrato
-//para depois mostrarmos sua implementação, vamos optar por discutir algumas
-//operações mostrando simultaneamente suas implementações. Ao final da seção
-//apresentaremos um arquivo que pode representar a interface do tipo. Nas funções que se
+//Da mesma forma que uma lista encadeada ï¿½ representada por um ponteiro para o
+//primeiro nï¿½, a estrutura da ï¿½rvore como um todo ï¿½ representada por um ponteiro para o
+//nï¿½ raiz.
+//Como acontece com qualquer TAD (tipo abstrato de dados), as operaï¿½ï¿½es que fazem
+//sentido para uma ï¿½rvore binï¿½ria dependem essencialmente da forma de utilizaï¿½ï¿½o que se
+//pretende fazer da ï¿½rvore. Nesta seï¿½ï¿½o, em vez de discutirmos a interface do tipo abstrato
+//para depois mostrarmos sua implementaï¿½ï¿½o, vamos optar por discutir algumas
+//operaï¿½ï¿½es mostrando simultaneamente suas implementaï¿½ï¿½es. Ao final da seï¿½ï¿½o
+//apresentaremos um arquivo que pode representar a interface do tipo. Nas funï¿½ï¿½es que se
 //seguem, consideraremos que existe o tipo Arv definido por:
 
 typedef struct arv Arv;
 
-//Como veremos as funções que manipulam árvores são, em geral, implementadas de
-//forma recursiva, usando a definição recursiva da estrutura.
+//Como veremos as funï¿½ï¿½es que manipulam ï¿½rvores sï¿½o, em geral, implementadas de
+//forma recursiva, usando a definiï¿½ï¿½o recursiva da estrutura.
 
-//Vamos procurar identificar e descrever apenas operações cuja utilidade seja a mais geral
-//possível. Uma operação que provavelmente deverá ser incluída em todos os casos é a
-//inicialização de uma árvore vazia. Como uma árvore é representada pelo endereço do
-//nó raiz, uma árvore vazia tem que ser representada pelo valor NULL. Assim, a função
-//que inicializa uma árvore vazia pode ser simplesmente:
+//Vamos procurar identificar e descrever apenas operaï¿½ï¿½es cuja utilidade seja a mais geral
+//possï¿½vel. Uma operaï¿½ï¿½o que provavelmente deverï¿½ ser incluï¿½da em todos os casos ï¿½ a
+//inicializaï¿½ï¿½o de uma ï¿½rvore vazia. Como uma ï¿½rvore ï¿½ representada pelo endereï¿½o do
+//nï¿½ raiz, uma ï¿½rvore vazia tem que ser representada pelo valor NULL. Assim, a funï¿½ï¿½o
+//que inicializa uma ï¿½rvore vazia pode ser simplesmente:
 
 Arv* inicializa(void)
 {
 	return NULL;
 }
 
-//Para criar árvores não vazias, podemos ter uma operação que cria um nó raiz dadas a
-//informação e suas duas sub-árvores, à esquerda e à direita. Essa função tem como valor
-//de retorno o endereço do nó raiz criado e pode ser dada por:
+//Para criar ï¿½rvores nï¿½o vazias, podemos ter uma operaï¿½ï¿½o que cria um nï¿½ raiz dadas a
+//informaï¿½ï¿½o e suas duas sub-ï¿½rvores, ï¿½ esquerda e ï¿½ direita. Essa funï¿½ï¿½o tem como valor
+//de retorno o endereï¿½o do nï¿½ raiz criado e pode ser dada por:
 
 Arv* cria(char c, Arv* sae, Arv* sad){
 	Arv* p=(Arv*)malloc(sizeof(Arv));
@@ -50,12 +50,12 @@ Arv* cria(char c, Arv* sae, Arv* sad){
 	return p;
 }
 
-//As duas funções inicializa e cria representam os dois casos da definição recursiva
-//de árvore binária: uma árvore binária (Arv* a;) é vazia (a = inicializa();) ou é
-//composta por uma raiz e duas sub-árvores (a = cria(c,sae,sad);). Assim, com
-//posse dessas duas funções, podemos criar árvores mais complexas.
-//Exemplo: Usando as operações inicializa e cria, crie uma estrutura que represente
-//a árvore da Figura 13.5.
+//As duas funï¿½ï¿½es inicializa e cria representam os dois casos da definiï¿½ï¿½o recursiva
+//de ï¿½rvore binï¿½ria: uma ï¿½rvore binï¿½ria (Arv* a;) ï¿½ vazia (a = inicializa();) ou ï¿½
+//composta por uma raiz e duas sub-ï¿½rvores (a = cria(c,sae,sad);). Assim, com
+//posse dessas duas funï¿½ï¿½es, podemos criar ï¿½rvores mais complexas.
+//Exemplo: Usando as operaï¿½ï¿½es inicializa e cria, crie uma estrutura que represente
+//a ï¿½rvore da Figura 13.5.
 
 //	 a
 //	/ \
@@ -63,21 +63,21 @@ Arv* cria(char c, Arv* sae, Arv* sad){
 //	\  /\
 //	 d e f
 
-//Para tratar a árvore vazia de forma diferente das outras, é importante ter uma operação
-//que diz se uma árvore é ou não vazia. Podemos ter:
-	
+//Para tratar a ï¿½rvore vazia de forma diferente das outras, ï¿½ importante ter uma operaï¿½ï¿½o
+//que diz se uma ï¿½rvore ï¿½ ou nï¿½o vazia. Podemos ter:
+
 int vazia(Arv* a)
 {
 	return a==NULL;
 }
 
-//Uma outra função muito útil consiste em exibir o conteúdo da árvore. Essa função deve
-//percorrer recursivamente a árvore, visitando todos os nós e imprimindo sua informação.
-//A implementação dessa função usa a definição recursiva da árvore. Vimos que uma
-//árvore binária ou é vazia ou é composta pela raiz e por duas sub-árvores. Portanto, para
-//imprimir a informação de todos os nós da árvore, devemos primeiro testar se a árvore é
-//vazia. Se não for, imprimimos a informação associada a raiz e chamamos
-//(recursivamente) a função para imprimir os nós das sub-árvores.
+//Uma outra funï¿½ï¿½o muito ï¿½til consiste em exibir o conteï¿½do da ï¿½rvore. Essa funï¿½ï¿½o deve
+//percorrer recursivamente a ï¿½rvore, visitando todos os nï¿½s e imprimindo sua informaï¿½ï¿½o.
+//A implementaï¿½ï¿½o dessa funï¿½ï¿½o usa a definiï¿½ï¿½o recursiva da ï¿½rvore. Vimos que uma
+//ï¿½rvore binï¿½ria ou ï¿½ vazia ou ï¿½ composta pela raiz e por duas sub-ï¿½rvores. Portanto, para
+//imprimir a informaï¿½ï¿½o de todos os nï¿½s da ï¿½rvore, devemos primeiro testar se a ï¿½rvore ï¿½
+//vazia. Se nï¿½o for, imprimimos a informaï¿½ï¿½o associada a raiz e chamamos
+//(recursivamente) a funï¿½ï¿½o para imprimir os nï¿½s das sub-ï¿½rvores.
 
 void imprime (Arv* a)
 {
@@ -86,11 +86,11 @@ void imprime (Arv* a)
 		imprime(a->esq); /* mostra sae */
 		imprime(a->dir); /* mostra sad */
 	}
-}	
+}
 
-// Exercício: Modifique a implementação de imprime, de forma que a saída impressa
-//reflita, além do conteúdo de cada nó, a estrutura da árvore, usando a notação introduzida
-//a n t e r i o r m e n t e . A s s i m , a s a í d a d a f u n ç ã o s e r i a :
+// Exercï¿½cio: Modifique a implementaï¿½ï¿½o de imprime, de forma que a saï¿½da impressa
+//reflita, alï¿½m do conteï¿½do de cada nï¿½, a estrutura da ï¿½rvore, usando a notaï¿½ï¿½o introduzida
+//a n t e r i o r m e n t e . A s s i m , a s a ï¿½ d a d a f u n ï¿½ ï¿½ o s e r i a :
 //<a<b<><d<><>>><c<e<><>><f<><>>>>.
 
 void imprime_alt (Arv* a)
@@ -108,14 +108,14 @@ void imprime_alt (Arv* a)
 		if (a->info == 'a')
 			printf(">");
 	}
-}	
+}
 
-//Uma outra operação que pode ser acrescentada é a operação para liberar a memória
-//alocada pela estrutura da árvore. Novamente, usaremos uma implementação recursiva.
-//Um cuidado essencial a ser tomado é que as sub-árvores devem ser liberadas antes de se
-//liberar o nó raiz, para que o acesso às sub-árvores não seja perdido antes de sua
-//remoção. Neste caso, vamos optar por fazer com que a função tenha como valor de
-//retorno a árvore atualizada, isto é, uma árvore vazia, representada por NULL.
+//Uma outra operaï¿½ï¿½o que pode ser acrescentada ï¿½ a operaï¿½ï¿½o para liberar a memï¿½ria
+//alocada pela estrutura da ï¿½rvore. Novamente, usaremos uma implementaï¿½ï¿½o recursiva.
+//Um cuidado essencial a ser tomado ï¿½ que as sub-ï¿½rvores devem ser liberadas antes de se
+//liberar o nï¿½ raiz, para que o acesso ï¿½s sub-ï¿½rvores nï¿½o seja perdido antes de sua
+//remoï¿½ï¿½o. Neste caso, vamos optar por fazer com que a funï¿½ï¿½o tenha como valor de
+//retorno a ï¿½rvore atualizada, isto ï¿½, uma ï¿½rvore vazia, representada por NULL.
 
 Arv* libera (Arv* a){
 	if (!vazia(a)){
@@ -126,15 +126,15 @@ Arv* libera (Arv* a){
 	return NULL;
 }
 
-// Uma propriedade fundamental de todas as árvores é que só existe um caminho da raiz
-// para qualquer nó. Com isto, podemos definir a altura de uma árvore como sendo o
-// comprimento do caminho mais longo da raiz até uma das folhas. Por exemplo, a altura
-// da árvore da Figura 13.5 é 2, e a altura das árvores da Figura 13.6 é 1. Assim, a altura
-// de uma árvore com um único nó raiz é zero e, por conseguinte, dizemos que a altura de
-// uma árvore vazia é negativa e vale -1.
+// Uma propriedade fundamental de todas as ï¿½rvores ï¿½ que sï¿½ existe um caminho da raiz
+// para qualquer nï¿½. Com isto, podemos definir a altura de uma ï¿½rvore como sendo o
+// comprimento do caminho mais longo da raiz atï¿½ uma das folhas. Por exemplo, a altura
+// da ï¿½rvore da Figura 13.5 ï¿½ 2, e a altura das ï¿½rvores da Figura 13.6 ï¿½ 1. Assim, a altura
+// de uma ï¿½rvore com um ï¿½nico nï¿½ raiz ï¿½ zero e, por conseguinte, dizemos que a altura de
+// uma ï¿½rvore vazia ï¿½ negativa e vale -1.
 int altura(Arv* a) {
-   if (a == NULL) 
-      return -1; // altura da árvore vazia
+   if (a == NULL)
+      return -1; // altura da ï¿½rvore vazia
    else {
       int he = altura (a->esq);
       int hd = altura (a->dir);
@@ -145,50 +145,50 @@ int altura(Arv* a) {
 
 int busca (Arv* a, char c){
 	if (vazia(a))
-		return 0; /* árvore vazia: não encontrou */
+		return 0; /* ï¿½rvore vazia: nï¿½o encontrou */
 	else
 		return a->info==c || busca(a->esq,c) || busca(a->dir,c);
-	// Note que esta forma de programar busca, em C, usando o operador lógico || (“ou”)
-	// faz com que a busca seja interrompida assim que o elemento é encontrado. Isto acontece
-	// porque se c==a->info for verdadeiro, as duas outras expressões não chegam a ser
-	// avaliadas. Analogamente, se o caractere for encontrado na sub-árvore da esquerda, a
-	// busca não prossegue na sub-árvore da direita.
-	// Podemos dizer que a expressão:
+	// Note que esta forma de programar busca, em C, usando o operador lï¿½gico || (ï¿½ouï¿½)
+	// faz com que a busca seja interrompida assim que o elemento ï¿½ encontrado. Isto acontece
+	// porque se c==a->info for verdadeiro, as duas outras expressï¿½es nï¿½o chegam a ser
+	// avaliadas. Analogamente, se o caractere for encontrado na sub-ï¿½rvore da esquerda, a
+	// busca nï¿½o prossegue na sub-ï¿½rvore da direita.
+	// Podemos dizer que a expressï¿½o:
 	// return c==a->info || busca(a->esq,c) || busca(a->dir,c);
-	// é equivalente a:
+	// ï¿½ equivalente a:
 	// if (c==a->info)
 	//		return 1;
 	// else if (busca(a->esq,c))
 	// 		return 1;
 	// else
-	// 		return busca(a->dir,c);	
+	// 		return busca(a->dir,c);
 }
 
 main() {
-	Arv* a1= cria('d',inicializa(),inicializa()); /* sub-árvore com 'd'*/
-	Arv* a2= cria('b',inicializa(),a1); /* sub-árvore com 'b'*/
-	Arv* a3= cria('e',inicializa(),inicializa()); /* sub-árvore com 'e'*/
-	Arv* a4= cria('f',inicializa(),inicializa()); /* sub-árvore com 'f'*/
-	Arv* a5= cria('c',a3,a4); /* sub-árvore com 'c'*/
-	Arv* a = cria('a',a2,a5 ); /* árvore com raiz 'a'*/
+	Arv* a1= cria('d',inicializa(),inicializa()); /* sub-ï¿½rvore com 'd'*/
+	Arv* a2= cria('b',inicializa(),a1); /* sub-ï¿½rvore com 'b'*/
+	Arv* a3= cria('e',inicializa(),inicializa()); /* sub-ï¿½rvore com 'e'*/
+	Arv* a4= cria('f',inicializa(),inicializa()); /* sub-ï¿½rvore com 'f'*/
+	Arv* a5= cria('c',a3,a4); /* sub-ï¿½rvore com 'c'*/
+	Arv* a = cria('a',a2,a5 ); /* ï¿½rvore com raiz 'a'*/
 	imprime(a);
 	puts("");
 	imprime_alt(a);
-	// Exercício: Escreva uma função que percorre uma árvore binária para determinar sua
-	// altura. O protótipo da função pode ser dado por:
+	// Exercï¿½cio: Escreva uma funï¿½ï¿½o que percorre uma ï¿½rvore binï¿½ria para determinar sua
+	// altura. O protï¿½tipo da funï¿½ï¿½o pode ser dado por:
 	// int altura(Arv* a);
 	printf("\nint altura(Arv* a) %d", altura(a));
-	// Uma outra função que podemos considerar percorre a árvore buscando a ocorrência de
-	// um determinado caractere c em um de seus nós. Essa função tem como retorno um
-	// valor booleano (um ou zero) indicando a ocorrência ou não do caractere na árvore.
+	// Uma outra funï¿½ï¿½o que podemos considerar percorre a ï¿½rvore buscando a ocorrï¿½ncia de
+	// um determinado caractere c em um de seus nï¿½s. Essa funï¿½ï¿½o tem como retorno um
+	// valor booleano (um ou zero) indicando a ocorrï¿½ncia ou nï¿½o do caractere na ï¿½rvore.
 	// int busca (Arv* a, char c);
 	printf("\nint busca (Arv* a, char c) %d", busca (a, 'a'));
 	printf("\nint busca (Arv* a, char c) %d", busca (a, 'x'));
 	libera(a);
 }
 
-// Finalmente, considerando que as funções discutidas e implementadas acima formam a
-// interface do tipo abstrato para representar uma árvore binária, um arquivo de interface
+// Finalmente, considerando que as funï¿½ï¿½es discutidas e implementadas acima formam a
+// interface do tipo abstrato para representar uma ï¿½rvore binï¿½ria, um arquivo de interface
 // arvbin.h pode ser dado por:
 //	typedef struct arv Arv;
 //	Arv* inicializa (void);
@@ -198,8 +198,8 @@ main() {
 //	Arv* libera (Arv* a);
 //	int busca (Arv* a, char c);
 
-//Alternativamente, a árvore poderia ser criada com uma única atribuição, seguindo a sua
-///estrutura, “recursivamente”:
+//Alternativamente, a ï¿½rvore poderia ser criada com uma ï¿½nica atribuiï¿½ï¿½o, seguindo a sua
+///estrutura, ï¿½recursivamenteï¿½:
 //Arv* a = cria('a',
 //cria('b',
 //		inicializa(),
@@ -208,5 +208,5 @@ main() {
 //		cria('c',
 //			cria('e', inicializa(), inicializa()),
 //			cria('f', inicializa(), inicializa())
-//			)	
+//			)
 //		);
