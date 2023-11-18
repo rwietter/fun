@@ -8,8 +8,6 @@
 *.so
 *.dylib
 
-6-banco/
-
 # Test binary, built with `go test -c`
 *.test
 

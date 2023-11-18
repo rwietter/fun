@@ -65,7 +65,7 @@ class Movie {
     this.title = title
   }
 }
-console.log(new Movie('Interestellar').title);
+console.log(new Movie('var(--font-inter)estellar').title);
 console.log(new Movie('Park').title);
 
 /* -------------------------------------------- */
