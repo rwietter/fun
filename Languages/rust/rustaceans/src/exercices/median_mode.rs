@@ -20,32 +20,33 @@ fn median(vec: &Vec<u8>) -> Median {
     }
 }
 
-fn mode(vec: &Vec<u8>) -> u8 {
+fn mode(vec: &Vec<u8>) -> Vec<u8> {
     let mut map: HashMap<u8, u8> = HashMap::new();
     for index in vec.iter() {
         let count = map.entry(*index).or_insert(0);
         *count += 1;
     }
 
-    let mut max = 0;
-    let mut median_key = 0;
+    let max_value = map.values().max().unwrap_or(&0);
+
+    let mut mode: Vec<u8> = vec![];
     for (key, value) in map.iter() {
-        if *value > max {
-            max = *value;
-            median_key = *key;
+        if value == max_value {
+            mode.push(*key);
         }
     }
-    median_key
+
+    mode
 }
 
 pub fn median_mode() {
-    let mut vec = vec![3, 4, 6, 7, 8, 9];
+    let mut vec = vec![3, 4, 6, 7, 8, 9, 3, 3, 8, 6, 8];
     vec.sort();
     let median: Median = median(&vec);
     match median {
-        Median::Mid(v) => println!("Median is: {}", v),
-        Median::Even(v) => println!("Median is: {}", v),
+        Median::Mid(v) => println!("Median Odd: {}", v),
+        Median::Even(v) => println!("Median Even: {}", v),
     }
     let mode = mode(&vec);
-    println!("Mode is: {mode}");
+    println!("Mode: {:?}", mode)
 }

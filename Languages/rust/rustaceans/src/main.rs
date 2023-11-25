@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 mod data_structures;
+mod error_handling;
 mod exercices;
 mod hashmap;
 mod slices;
@@ -17,6 +18,7 @@ fn main() {
     slices::string_slice();
     strings::forloop();
     hashmap::hashmap();
+    error_handling::error_handling();
     median_mode::median_mode();
 }
 
