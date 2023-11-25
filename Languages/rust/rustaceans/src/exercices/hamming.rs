@@ -1,5 +1,5 @@
 pub fn is_equals_len(k: &String, c: &String) -> bool {
-    return k.len() == c.len();
+    k.len() == c.len()
 }
 
 pub fn hamming_distance(k: String, c: String) -> i32 {
@@ -15,7 +15,7 @@ pub fn hamming_distance(k: String, c: String) -> i32 {
         }
     }
 
-    return distance;
+    distance
 }
 
 pub fn init() {

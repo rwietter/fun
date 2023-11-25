@@ -20,7 +20,7 @@ pub fn is_narcissistic(number: u32) -> bool {
         narcissistic == number
     );
 
-    return narcissistic == number;
+    narcissistic == number
 }
 
 #[test]

@@ -26,7 +26,7 @@ pub fn sum_cubes(natural: u32) -> u32 {
     let range = |n: u32| -> RangeInclusive<u32> { 1..=n };
     let pow = |idx: u32| -> u32 { idx.pow(3) };
 
-    return range(natural).map(pow).sum();
+    range(natural).map(pow).sum()
 }
 
 /*

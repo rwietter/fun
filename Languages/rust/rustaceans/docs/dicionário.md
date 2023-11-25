@@ -19,3 +19,17 @@
 - Modules and use: Let you control the organization, scope, and privacy of paths
 
 - Paths: A way of naming an item, such as a struct, function, or module
+
+## Ownership e Borrowing
+
+Ownership é um sistema de gerenciamento de memória no Rust que garante que a memória seja alocada e liberada de forma segura.
+
+Regras de ownership Existem três regras básicas de ownership:
+
+- Cada valor no Rust tem um proprietário.
+- Só pode haver um proprietário de um valor por vez.
+- Quando o proprietário de um valor sai do escopo, o valor é descartado.
+
+Borrowing O borrowing é uma maneira de acessar um valor sem se tornar seu proprietário.
+
+Lifetimes Lifetimes são uma maneira de garantir que dois valores que são emprestados um ao outro não expirem ao mesmo tempo.
