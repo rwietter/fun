@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
+mod contracts;
 mod data_structures;
 mod error_handling;
 mod exercices;
@@ -20,6 +21,7 @@ fn main() {
     hashmap::hashmap();
     error_handling::error_handling();
     median_mode::median_mode();
+    contracts::gessing_game();
 }
 
 fn change(str: &mut String) {

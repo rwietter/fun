@@ -1,4 +1,5 @@
 use std::{
+    error::Error,
     fs::File,
     io::{self, ErrorKind, Read},
 };
@@ -103,4 +104,11 @@ fn read_username_from_file() -> Result<String, io::Error> {
     // File::open("hello.txt")?.read_to_string(&mut username)?;
 
     Ok(username)
+}
+
+// Box<dyn Error> é uma trait object que significa "qualquer tipo de erro". Isso nos permite retornar
+// qualquer tipo de erro que corresponda a essa assinatura de função.
+fn box_error() -> Result<(), Box<dyn Error>> {
+    let greeting_file = File::open("hello.txt")?;
+    Ok(())
 }
