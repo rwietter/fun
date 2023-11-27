@@ -5,6 +5,7 @@ mod data_structures;
 mod error_handling;
 mod exercices;
 mod hashmap;
+mod move_owner;
 mod slices;
 mod strings;
 
@@ -22,6 +23,7 @@ fn main() {
     error_handling::error_handling();
     median_mode::median_mode();
     contracts::gessing_game();
+    move_owner::move_owner();
 }
 
 fn change(str: &mut String) {
