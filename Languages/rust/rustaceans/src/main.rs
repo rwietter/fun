@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
+mod chapter_10;
 mod contracts;
 mod data_structures;
 mod error_handling;
@@ -24,6 +25,8 @@ fn main() {
     median_mode::median_mode();
     contracts::gessing_game();
     move_owner::move_owner();
+    chapter_10::generics::pointers();
+    chapter_10::traits::summarize();
 }
 
 fn change(str: &mut String) {
