@@ -23,6 +23,15 @@ pub struct Tweet {
     pub retweet: bool,
 }
 
+fn create_tweet(user: String, content: String) -> impl Summary {
+    Tweet {
+        username: user,
+        content,
+        reply: false,
+        retweet: false,
+    }
+}
+
 impl Summary for NewsArticle {
     fn summarize(&self) -> String {
         format!("{}, by {} ({})", self.headline, self.author, self.location)
@@ -88,5 +97,9 @@ pub fn summarize() {
     notify(&tweet);
 
     // Uso de uma implementação genérica que implementa a trait Summary
-    notify_generic(&tweet)
+    notify_generic(&tweet);
+
+    // Return Summary implementation
+    let tweet_two = create_tweet(String::from("rwietter"), String::from("khd"));
+    notify_generic(&tweet_two);
 }
