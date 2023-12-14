@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 mod chapter_10;
+mod chapter_11;
 mod contracts;
 mod data_structures;
 mod error_handling;
