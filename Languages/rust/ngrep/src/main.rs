@@ -9,7 +9,7 @@ fn main() {
   let config = match config {
     Ok(config) => config,
     Err(err) => {
-      println!("Problem parsing arguments: {}", err);
+      eprintln!("Problem parsing arguments: {}", err);
       process::exit(1);
     }
   };
@@ -17,7 +17,7 @@ fn main() {
   let contents: Result<String, Box<dyn Error>> = ngrep::read_contents(config.file_path);
 
   if let Err(err) = contents {
-    println!("Application error: {}", err);
+    eprintln!("Application error: {}", err);
     process::exit(1);
   }
 
