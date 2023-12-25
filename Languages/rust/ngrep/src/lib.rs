@@ -2,23 +2,28 @@ use std::error::Error;
 use std::{env, fs};
 
 // How Config should store a reference of arg1 and arg2, we use lifetime specifier, because it's unique way to store references in a struct
-pub struct Config<'a> {
-  pub query: &'a String,
-  pub file_path: &'a String,
+pub struct Config {
+  pub query: String,
+  pub file_path: String,
   pub ignore_case: bool,
 }
 
 // <'_> is a lifetime elision, it means that the lifetime of the
 // reference returned by build is the same as the lifetime
 // of the reference to self in Config
-impl Config<'_> {
-  pub fn build(args: &Vec<String>) -> Result<Config, &'static str> {
-    if args.len() < 3 {
-      return Err("not enough arguments");
-    }
+impl Config {
+  pub fn build(mut args: impl Iterator<Item = String>) -> Result<Config, &'static str> {
+    args.next(); // skip program name
 
-    let query = &args[1];
-    let file_path = &args[2];
+    let query = match args.next() {
+      Some(arg) => arg,
+      None => return Err("Didn't get a query string"),
+    };
+
+    let file_path = match args.next() {
+      Some(arg) => arg,
+      None => return Err("Didn't get a file path"),
+    };
 
     let ignore_case = env::var("IGNORE_CASE").is_ok();
 

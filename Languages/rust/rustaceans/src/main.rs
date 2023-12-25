@@ -7,6 +7,7 @@ mod data_structures;
 mod error_handling;
 mod exercices;
 mod hashmap;
+mod iteradores;
 mod move_owner;
 mod slices;
 mod strings;
@@ -40,7 +41,9 @@ fn main() {
     move_owner::move_owner();
     chapter_10::generics::pointers();
     chapter_10::traits::summary::summarize();
-    chapter_10::lifetimes::lifetimes::lifetimes()
+    chapter_10::lifetimes::lifetimes::lifetimes();
+    iteradores::iter::iterator_sum();
+    iteradores::iter::iter_adaptors()
 }
 
 fn change(str: &mut String) {

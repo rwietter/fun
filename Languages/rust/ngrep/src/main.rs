@@ -3,8 +3,8 @@ use std::{env, error::Error, process};
 use ngrep::Config;
 
 fn main() {
-  let args: Vec<String> = env::args().collect();
-  let config: Result<Config<'_>, &str> = Config::build(&args);
+  let args = env::args();
+  let config: Result<Config, &str> = Config::build(args);
 
   let config = match config {
     Ok(config) => config,
@@ -14,7 +14,7 @@ fn main() {
     }
   };
 
-  let contents: Result<String, Box<dyn Error>> = ngrep::read_contents(config.file_path);
+  let contents: Result<String, Box<dyn Error>> = ngrep::read_contents(&config.file_path);
 
   if let Err(err) = contents {
     eprintln!("Application error: {}", err);
