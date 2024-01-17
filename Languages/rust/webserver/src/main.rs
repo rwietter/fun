@@ -10,7 +10,7 @@ use rust_webserver::ThreadPool;
 
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878");
-    let mut pool = ThreadPool::new(ThreadPool::build(0));
+    let mut pool = ThreadPool::new(ThreadPool::build(4));
 
     let listener = match listener {
         Ok(listener) => listener,
@@ -22,12 +22,14 @@ fn main() {
 
     println!("Server started! Listening on port 7878");
 
-    for stream in listener.incoming() {
+    for stream in listener.incoming().take(2) {
         let stream = stream.unwrap();
         pool.execute(|| {
             handle_connection(stream);
         });
     }
+
+    println!("Shutting down.");
 }
 
 fn handle_connection(mut stream: TcpStream) {

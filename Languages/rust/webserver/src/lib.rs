@@ -1,11 +1,47 @@
-use std::thread;
-pub struct ThreadPool {
-    pub threads: Vec<thread::JoinHandle<()>>,
-}
+use std::{
+    sync::{mpsc, Arc, Mutex},
+    thread,
+};
 
 #[derive(Debug)]
 pub enum PoolThreadError {
     UnavailableThreads,
+}
+
+struct Worker {
+    id: usize,
+    thread: Option<thread::JoinHandle<()>>,
+}
+
+pub struct ThreadPool {
+    pub workers: Vec<Worker>,
+    sender: Option<mpsc::Sender<Job>>,
+}
+
+type Job = Box<dyn FnOnce() + Send + 'static>;
+
+impl Worker {
+    pub fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
+        let thread = thread::spawn(move || loop {
+            let message = receiver.lock().unwrap().recv();
+
+            match message {
+                Ok(jon) => {
+                    println!("Worker {} got a job; executing.", id);
+                    jon();
+                }
+                Err(_) => {
+                    println!("Worker {id} disconnected; shutting down.");
+                    break;
+                }
+            }
+        });
+
+        Worker {
+            id,
+            thread: Some(thread),
+        }
+    }
 }
 
 impl ThreadPool {
@@ -13,14 +49,16 @@ impl ThreadPool {
         if size == 0 {
             return Err(PoolThreadError::UnavailableThreads);
         }
-        let mut threads = Vec::with_capacity(size);
-        for _ in 0..size {
-            let thread = thread::spawn(|| {
-                println!("Thread spawned!");
-            });
-            threads.push(thread);
+        let (sender, receiver) = mpsc::channel();
+        let receiver = Arc::new(Mutex::new(receiver));
+        let mut workers = Vec::with_capacity(size);
+        for id in 0..size {
+            workers.push(Worker::new(id, Arc::clone(&receiver)));
         }
-        Ok(ThreadPool { threads })
+        Ok(ThreadPool {
+            workers,
+            sender: Some(sender),
+        })
     }
 
     pub fn new(thread_pool: Result<ThreadPool, PoolThreadError>) -> ThreadPool {
@@ -36,8 +74,24 @@ impl ThreadPool {
     where
         F: FnOnce() + Send + 'static,
     {
-        let thread = thread::spawn(f);
-        self.threads.push(thread);
+        let job = Box::new(f);
+        self.sender.as_ref().unwrap().send(job).unwrap();
+    }
+}
+
+// ---------------------------------
+// Graceful shutdown and cleanup
+// ---------------------------------
+
+impl Drop for ThreadPool {
+    fn drop(&mut self) {
+        drop(self.sender.take()); // A eliminação do sender fecha o canal, o que indica que nenhuma outra mensagem será enviada.
+        for worker in &mut self.workers {
+            println!("Shutting down worker {}", worker.id);
+            if let Some(thread) = worker.thread.take() {
+                thread.join().unwrap();
+            }
+        }
     }
 }
 
