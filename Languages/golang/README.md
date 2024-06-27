@@ -121,8 +121,6 @@ func main() {
 }
 ```
 
-
-
 ## Valores nomeados de retorno
 
 Valores de retorno de Go podem ser nomeados e agirem apenas como variáveis.
@@ -149,4 +147,6 @@ func main() {
 }
 ```
 
----
+## Erros
+
+- [Go error handling good bad ugly](https://gist.github.com/ljtfreitas/dfbbbb7e03ecb7b02ac5f132d6cabb4b)
