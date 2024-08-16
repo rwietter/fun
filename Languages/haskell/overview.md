@@ -46,3 +46,12 @@ To update the package list, run the following command:
 ```bash
 cabal update
 ```
+
+## GHC and GHCi
+
+GHC (Glasgow Haskell Compiler) is the standard Haskell compiler. It is used to compile Haskell code into executable programs. GHCi is the interactive shell for GHC.
+
+```bash
+ghc --version
+ghci # Playground for Haskell
+```

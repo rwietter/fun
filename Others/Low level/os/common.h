@@ -1,2 +1,0 @@
-
-int Spin(int x);
